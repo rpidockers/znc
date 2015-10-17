@@ -5,6 +5,7 @@ Run the [ZNC](http://znc.in) IRC Bouncer in a Docker container.
 This is a version for Raspberry PI.
 
 Uses image [resin/rpi-raspbian:jessie](https://hub.docker.com/r/resin/rpi-raspbian)
+
 Based on [yyolk/rpi-docker-znc](https://github.com/yyolk/rpi-docker-znc)
 
 ## Prerequisites
@@ -79,7 +80,7 @@ script, the [start-znc][] script simply passes all arguments along to ZNC.
 
 For example, if you want to use the `--makepass` option, you would run:
 
-    docker run -i -t -v $HOME/.znc:/znc-data yyolk/rpi-docker-znc --makepass
+    docker run -i -t -v $HOME/.znc:/znc-data rpidockers/znc --makepass
 
 Make note of the use of `-i` and `-t` instead of `-d`. This attaches us to the
 container, so we can interact with ZNC's makepass process. With `-d` it would
