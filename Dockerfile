@@ -1,16 +1,17 @@
-#> ZNC - Robust IRC bouncer
-#? https://github.com/yyolk/docker-znc
-FROM yyolk/rpi-archlinuxarm
-MAINTAINER  Joseph Yølk Chiocchi joe@yolk.cc
+FROM resin/rpi-raspbian:jessie
 
 # Deps
-RUN pacman -S --noconfirm znc sudo gcc &&\
-  pacman -Scc --noconfirm &&\
-  rm -rf /var/cache/pacman/pkg/*
+RUN apt-get update
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y gcc znc
+
+RUN useradd znc
 
 # Config
 ADD files/ /
 
 EXPOSE 6667
+
 ENTRYPOINT ["/usr/local/bin/start-znc"]
+
 CMD [""]
