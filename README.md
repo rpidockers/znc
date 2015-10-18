@@ -1,5 +1,7 @@
 # ZNC for Docker
 
+Code [rpidockers/znc](https://github.com/rpidockers/znc)
+
 Run the [ZNC](http://znc.in) IRC Bouncer in a Docker container.
 
 This is a version for Raspberry PI.
